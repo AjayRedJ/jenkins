@@ -1,4 +1,6 @@
 # jenkins
 jenkins repo to create pipeline
-
-adding this line from local repo and committing changes
+Step 1: Integrate Github repo with Jenkins server.
+      - PAT to jenkins if needed.
+      - repo link.
+      - WebHook link.
