@@ -1,34 +1,12 @@
 pipeline{
     agent{
-        docker 
+        docker {image 'nginx:latest'}
     }
     stages{
-        stage('checkout git repo jenkins - main branch'){
+        stage('check nginx version'){
             steps{
-
+                sh 'nginx -version'
             }
-        }
-        stage('build image from docker file'){
-            steps{
-
-            }
-
-        }
-        stage('push to ECR/Github'){
-            steps{
-
-            }
-        }
-    }
-    post{
-        success{
-            echo "success"
-        }
-        failure{
-            echo "failure"
-        }
-        always{
-            echo "build exit"
         }
     }
 }
