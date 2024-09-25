@@ -1,0 +1,34 @@
+pipeline{
+    agent{
+        docker 
+    }
+    stages{
+        stage('checkout git repo jenkins - main branch'){
+            steps{
+
+            }
+        }
+        stage('build image from docker file'){
+            steps{
+
+            }
+
+        }
+        stage('push to ECR/Github'){
+            steps{
+
+            }
+        }
+    }
+    post{
+        success{
+            echo "success"
+        }
+        failure{
+            echo "failure"
+        }
+        always{
+            echo "build exit"
+        }
+    }
+}
