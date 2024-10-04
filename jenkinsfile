@@ -3,8 +3,7 @@ pipeline{
     stages{
         stage('checkout git'){
             steps{
-                git // credentialsId: '',
-                    url: 'https://github.com/AjayRedJ/jenkins.git',
+                git url: 'https://github.com/AjayRedJ/jenkins.git',
                     branch: 'main'
             }
             
