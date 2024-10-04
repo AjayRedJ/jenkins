@@ -1,11 +1,23 @@
 pipeline{
-    agent{
-        docker {image 'nginx:latest'}
-    }
+    agent any
     stages{
-        stage('check nginx version'){
+        stage('checkout git'){
             steps{
-                sh 'nginx -version'
+                git // credentialsId: '',
+                    url: 'https://github.com/AjayRedJ/jenkins.git',
+                    branch: 'main'
+            }
+            
+        }
+        stage('check docker version'){
+            steps{
+                sh 'docker version'
+            }
+        }
+        stage('build image from dockerfile'){
+            steps{
+                sh 'docker build -t app-img'
+                //sh 'docker run -d -p 8081:80 app-img'
             }
         }
     }
